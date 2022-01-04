@@ -7,10 +7,15 @@ variable "runner_name" {
 variable "gitlab_address" {
   description = "Address of GitLab instance eg. https://gitlab.example.com"
   type        = string
+  default     = "https://gitlab.com/"
 }
 
 variable "registration_token" {
   description = "The Runner registration that can be found in the GitLab UI"
+  type        = string
+}
+variable "do_api_token" {
+  description = "DigitalOcean personal access token"
   type        = string
 }
 
@@ -25,6 +30,11 @@ variable "cloud_region" {
   default     = "ams3"
 }
 
+variable "pvt_key" {
+  description = "path to ssh private key(used in provisioners)"
+  type        = string
+
+}
 variable "droplet_size" {
   description = "DigitalPcean droplet size slug eg. s-1vcpu-1gb"
   type        = string
